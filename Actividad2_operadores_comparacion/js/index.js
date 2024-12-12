@@ -7,10 +7,24 @@ const PASSWORD_CORRECTO="1234";
 /* Estos son los datos del usuario
 (modifícalos para comprobar que todo funciona correctamente)*/
 
-const NOMBRE="soyjab";
-const PIN=0;
+const NOMBRE="jab";
+const PIN="";
 const PASSWORD="1234";
 
+(
+  (NOMBRE==PIN && PIN==PASSWORD && NOMBRE!='')
+||
+  (NOMBRE===NOMBRE_CORRECTO || NOMBRE===ALIAS_CORRECTO)
+&&
+  (PASSWORD===PASSWORD_CORRECTO || PIN===PIN_CORRECTO)  
+)
+? dibujar(`<div class="bien">Bien</div>`)
+: dibujar(`<div class="mal ">Mal </div>`)
+
+
+function dibujar(valor){
+  document.querySelector(".resultado").innerHTML=valor;
+}
 /*
 Si el usuario ha escrito el mismo valor  en NOMBRE, PIN y PASSWORD (pero no ha dejado ninguno vacío): es "Bien"
 o bien 
@@ -23,13 +37,5 @@ Entonces se muestra: "Bien" (color "green")
 En el resto de casos: "Mal" (color "red")
 */
 
-/*
-  (condiciones)
-  ? ______
-  : ______
-*/
 
 
-function dibujar(valor){
-  document.querySelector(".resultado").innerHTML=valor;
-}
