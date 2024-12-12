@@ -1,10 +1,10 @@
 // Valor a modificar
-let nota=100;
+let nota=prompt("Coloca tu puntuacion:");
 
 (nota<0 || nota>10)
-? dibujar("No te flipes")
+? dibujar("Esta nota no existe!")
 : (nota<5)
-    ? dibujar("Suspendido")
+    ? dibujar("Suspendido") 
     : (nota<7)
         ? dibujar("Aprobado")
         : (nota<9)
@@ -14,7 +14,7 @@ let nota=100;
 function dibujar(Valor) {
     (nota>=5 && nota<=10)
     ? document.querySelector(".resultado").innerHTML=`<div class="aprobado">Has APROBADO!!</div>`
-    : document.querySelector(".resultado").innerHTML=`<div class="suspendido">Has APROBADO!!</div>`
+    : document.querySelector(".resultado").innerHTML=`<div class="suspendido">NO aprobaste!!</div>`
     document.querySelector(".nota").innerHTML=Valor
 }
 
